@@ -10,8 +10,7 @@ class ProtectedAPI < Rack::App
   before do
     http_status!(401) unless request.env['HTTP_ALLOW_ME'] == 'please'
   end
-
-  get('/') {}
+  get {}
 
   mount ImportantReasource
 
